@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"os"
 )
 
 func preIP(ip string) string {
@@ -19,11 +20,11 @@ func preIP(ip string) string {
 }
 
 func main(){
-	var ips [5] string = [5]string{"69.160.160.133", "130.43.180.51", "92.40.200.148", "5.151.93.193", "34.240.50.53"}
-
+	//var ips [5] string = [5]string{"69.160.160.133", "130.43.180.51", "92.40.200.148", "5.151.93.193", "34.240.50.53"}
+	ips := os.Args[1:]
 	fmt.Println(ips)
 
-	for i:=0; i<5; i++{
+	for i:=0; i< len(ips); i++{
 		fmt.Println(preIP(ips[i]))
 	}
 }
